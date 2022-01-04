@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { UserService } from '../user.service';
+import { AuthService } from '../auth/auth.service';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,15 @@ import { UserService } from '../user.service';
 export class AdminAuthGuardService implements CanActivate {
 
   constructor(
-    private userService: UserService) {
+    private userService: UserService,
+    private authService: AuthService) {
 
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return this.userService.AppUser$.pipe(map(appUser => {
+    return this.authService.AppUser$.pipe(map(appUser => {
       if (appUser) {
-        // return appUser.isAdmin;
-        return true;
+        return appUser.isAdmin;
       }
       return false;
     }))

@@ -21,9 +21,15 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
 import { AdminManageUsersComponent } from './components/admin/admin-manage-users/admin-manage-users.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { AuthGuardService } from './services/guards/auth-guard.service';
-import { AuthService } from './services/auth.service';
-import { UserService } from './services/user.service';
+import { AuthService } from './services/auth/auth.service';
+import { UserService } from './services/user/user.service';
 import { AdminAuthGuardService } from './services/guards/admin-auth-guard.service';
+import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import { CategoryServiceService } from './services/categories/category-service.service';
+import { ProductService } from './services/products/product.service';
+import { FormsModule }   from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +44,8 @@ import { AdminAuthGuardService } from './services/guards/admin-auth-guard.servic
     CheckOutComponent,
     AdminManageUsersComponent,
     OrderSuccessComponent,
+    ProductFormComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -47,13 +55,17 @@ import { AdminAuthGuardService } from './services/guards/admin-auth-guard.servic
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    CustomFormsModule
   ],
   providers: [
     AuthGuardService,
     AuthService,
     UserService,
-    AdminAuthGuardService
+    AdminAuthGuardService,
+    CategoryServiceService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })

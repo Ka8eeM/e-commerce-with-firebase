@@ -11,6 +11,7 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
 import { AdminManageUsersComponent } from './components/admin/admin-manage-users/admin-manage-users.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { AdminAuthGuardService } from './services/guards/admin-auth-guard.service';
+import { ProductFormComponent } from './components/admin/product-form/product-form.component';
 
 const routes: Routes =
   [
@@ -19,6 +20,7 @@ const routes: Routes =
     { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuardService,] },
     { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
+    { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'admin/users', component: AdminManageUsersComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'shopping-card', component: ShoppingCardComponent },
     { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuardService,] },
