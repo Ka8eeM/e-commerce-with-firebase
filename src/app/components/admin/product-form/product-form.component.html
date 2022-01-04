@@ -4,8 +4,8 @@
         <input type="text" required ngModel #title="ngModel"  minlength="3" name="title" id="title"
             class="form-control" />
         <div class="alert-danger" *ngIf="title.touched && title.invalid">
-            <div *ngIf="title.errors.required">Please, Enter Product Title</div>
-            <div *ngIf="title.errors.minlength">Min length product is {{title.errors.minlength.requiredLength}}</div>
+            <div *ngIf="title.errors?.['required']">Please, Enter Product Title</div>
+            <div *ngIf="title.errors?.['minlength']">Min length product is {{title.errors?.['minlength'].requiredLength}}</div>
         </div>
     </div>
 
@@ -17,8 +17,8 @@
                 aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">.00</span>
             <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
-                <div *ngIf="price.errors.required">Please Enter product price</div>
-                <div *ngIf="price.errors.min">Min price is Zero</div>
+                <div *ngIf="price.errors?.['required']">Please Enter product price</div>
+                <div *ngIf="price.errors?.['min']">Min price is Zero</div>
             </div>
 
         </div>
@@ -41,7 +41,7 @@
                     <input type="text" required #imageUrl="ngModel" id="imageUrl" ngModel name="imageUrl"
                         class="form-control" />
                     <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
-                        <div *ngIf="imageUrl.errors.required">
+                        <div *ngIf="imageUrl.errors?.['required']">
                             Please enter Image Url
                         </div>
                     </div>
