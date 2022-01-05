@@ -1,1 +1,26 @@
-<p>products works!</p>
+<div class="row">
+
+    <div class="col-3">
+        <div *ngFor="let cat of categories$ | async" class="list-group">
+            <a routerLink="/" [queryParams]="{category:cat.name}"
+                class="list-group-item list-group-item-action">{{cat.name}}</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+
+            <ng-container *ngFor="let product of filteredProducts; let idx = index">
+
+                <div class="col">
+                    <product-card [product]="product"></product-card>
+                </div>
+
+                <div *ngIf="(idx + 1) % 2 == 0" class="w-100">
+                </div>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</div>

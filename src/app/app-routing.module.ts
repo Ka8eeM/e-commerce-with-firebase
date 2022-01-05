@@ -15,12 +15,14 @@ import { ProductFormComponent } from './components/admin/product-form/product-fo
 
 const routes: Routes =
   [
+    { path: '', component: ProductsComponent, },
     { path: 'products', component: ProductsComponent, },
     { path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGuardService,] },
     { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuardService,] },
     { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
+    { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'admin/users', component: AdminManageUsersComponent, canActivate: [AuthGuardService, AdminAuthGuardService] },
     { path: 'shopping-card', component: ShoppingCardComponent },
     { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuardService,] },

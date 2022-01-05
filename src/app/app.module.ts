@@ -29,6 +29,8 @@ import { CategoryServiceService } from './services/categories/category-service.s
 import { ProductService } from './services/products/product.service';
 import { FormsModule }   from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { DataTablesModule } from 'angular-datatables';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { CustomFormsModule } from 'ng2-validation';
     AdminManageUsersComponent,
     OrderSuccessComponent,
     ProductFormComponent,
+    ProductCardComponent,
     
   ],
   imports: [
@@ -57,7 +60,8 @@ import { CustomFormsModule } from 'ng2-validation';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    CustomFormsModule
+    CustomFormsModule,
+    DataTablesModule
   ],
   providers: [
     AuthGuardService,
