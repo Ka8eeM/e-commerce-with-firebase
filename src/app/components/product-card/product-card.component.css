@@ -1,3 +1,15 @@
 .card-img-top{
     height: 200px;
 }
+
+.card-footer{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+button{
+    width: 100%;
+}
+

@@ -31,6 +31,8 @@ import { FormsModule }   from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DataTablesModule } from 'angular-datatables';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
+import { ShoppingCartService } from './services/shopping-card/shopping-cart.service';
 
 
 @NgModule({
@@ -48,7 +50,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     OrderSuccessComponent,
     ProductFormComponent,
     ProductCardComponent,
-    
+    ProductFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     NgbModule,
     FormsModule,
     CustomFormsModule,
-    DataTablesModule
+    DataTablesModule, 
   ],
   providers: [
     AuthGuardService,
@@ -70,6 +72,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     AdminAuthGuardService,
     CategoryServiceService,
     ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

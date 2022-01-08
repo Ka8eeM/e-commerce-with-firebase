@@ -26,6 +26,7 @@ export class ProductFormComponent implements OnInit {
       /* take 1 take the object and unsubsribe to the stream*/
 
       this.productService.getProductById(this.id).pipe(take(1)).subscribe((prod) => {
+        
         if (prod)
           this.currentProduct = prod;
       })
